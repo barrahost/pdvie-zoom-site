@@ -10,17 +10,19 @@ const CONFIG = {
   school: {
     name: "École Porteurs de Vie",
     shortName: "PDVie",
-    tagline: "Cours en ligne via Zoom",
-    logo: null, // Chemin vers le logo (ex: "images/logo.png")
-    backgroundImage: null, // Chemin vers l'image de fond officielle
-    supportWhatsApp: null, // Numéro WhatsApp (ex: "+33612345678")
-    supportEmail: "support@porteursdvie.fr", // Email de support
+    tagline: "Vases d'Honneur — Campus Afrique",
+    logo: "images/logo.png",
+    backgroundImage: null, // Sera défini dynamiquement selon la classe
+    supportWhatsApp: null, // À configurer : ex. "+33612345678"
+    supportEmail: "support@porteursdvie.fr",
     supportEmailLabel: "support@porteursdvie.fr"
   },
   classes: [
-    { name: "Classe A - Campus Principal", campus: "Campus Principal" },
-    { name: "Classe B - Campus Nord", campus: "Campus Nord" },
-    { name: "Classe C - Campus Sud", campus: "Campus Sud" }
+    { name: "Classe 1 — Campus Afrique", campus: "Campus Afrique", image: "images/classe1.jpg" },
+    { name: "Classe 2 — Campus Afrique", campus: "Campus Afrique", image: "images/classe2.jpg" },
+    { name: "Classe 3 — Campus Afrique", campus: "Campus Afrique", image: "images/classe3.jpg" },
+    { name: "Classe 4 — Campus Afrique", campus: "Campus Afrique", image: "images/classe4.jpg" },
+    { name: "Stagiaire — Campus Afrique", campus: "Campus Afrique", image: "images/classestagiaire.jpg" }
   ]
 };
 
@@ -102,16 +104,17 @@ function applyConfig() {
 
   // Logo
   if (CONFIG.school.logo) {
-    document.querySelectorAll('[data-logo]').forEach(el => {
-      if (el.tagName === 'IMG') {
-        el.src = CONFIG.school.logo;
-        el.style.display = 'block';
-        const placeholder = el.previousElementSibling;
-        if (placeholder && placeholder.classList.contains('hero-logo-placeholder')) {
-          placeholder.style.display = 'none';
-        }
-      }
-    });
+    // Hero logo
+    const heroLogo = document.getElementById('heroLogo');
+    const heroPlaceholder = document.getElementById('heroLogoPlaceholder');
+    if (heroLogo) { heroLogo.src = CONFIG.school.logo; heroLogo.style.display = 'block'; }
+    if (heroPlaceholder) heroPlaceholder.style.display = 'none';
+
+    // Navbar logo
+    const navLogo = document.getElementById('navLogo');
+    const navPlaceholder = document.getElementById('navLogoPlaceholder');
+    if (navLogo) { navLogo.src = CONFIG.school.logo; navLogo.style.display = 'block'; }
+    if (navPlaceholder) navPlaceholder.style.display = 'none';
   }
 
   // Image de fond officielle
@@ -166,6 +169,29 @@ function updateClassSelector() {
     select.appendChild(opt);
   });
   if (current) select.value = current;
+}
+
+function updateClassImage(idx) {
+  if (idx === '' || !CONFIG.classes[idx]) return;
+  const cls = CONFIG.classes[idx];
+  // Aperçu Zoom
+  const bgPreview = document.getElementById('zoomPreviewBg');
+  if (bgPreview && cls.image) bgPreview.style.backgroundImage = `url(${cls.image})`;
+  // Libellé classe
+  const classLabel = document.getElementById('zoomPreviewClassLabel');
+  if (classLabel) classLabel.textContent = cls.name;
+  // Section téléchargement
+  if (cls.image) {
+    const downloadImg = document.getElementById('downloadPreviewImg');
+    const placeholder = document.getElementById('downloadPlaceholder');
+    const downloadBtn = document.getElementById('downloadBgBtn');
+    if (downloadImg) { downloadImg.src = cls.image; downloadImg.style.display = 'block'; }
+    if (placeholder) placeholder.style.display = 'none';
+    if (downloadBtn) downloadBtn.dataset.classImage = cls.image;
+    // Mettre à jour le titre de téléchargement
+    const dlTitle = document.getElementById('downloadTitle');
+    if (dlTitle) dlTitle.textContent = cls.name;
+  }
 }
 
 // ============================================================
@@ -504,14 +530,11 @@ function initCustomization() {
   // Aperçu en temps réel
   const classSelect = document.getElementById('classSelect');
   const studentName = document.getElementById('previewStudentName');
-  const previewClass = document.getElementById('previewClassName');
 
   if (classSelect) {
     classSelect.addEventListener('change', () => {
       const idx = classSelect.value;
-      if (idx !== '' && CONFIG.classes[idx]) {
-        if (previewClass) previewClass.textContent = CONFIG.classes[idx].name;
-      }
+      updateClassImage(idx);
     });
   }
 
@@ -530,14 +553,25 @@ function initDownloadSection() {
   const downloadBtn = document.getElementById('downloadBgBtn');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
-      if (CONFIG.school.backgroundImage) {
+      // Priorité : image de la classe sélectionnée, sinon image générale
+      const classImage = downloadBtn.dataset.classImage;
+      const imageUrl = classImage || CONFIG.school.backgroundImage;
+      if (imageUrl) {
         const a = document.createElement('a');
-        a.href = CONFIG.school.backgroundImage;
-        a.download = 'fond-virtuel-zoom-pdvie.jpg';
+        a.href = imageUrl;
+        // Nom du fichier basé sur la classe sélectionnée
+        const classSelect = document.getElementById('classSelect');
+        let filename = 'fond-virtuel-zoom-pdvie.jpg';
+        if (classSelect && classSelect.value !== '' && CONFIG.classes[classSelect.value]) {
+          const className = CONFIG.classes[classSelect.value].name
+            .replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+          filename = `fond-zoom-${className}.jpg`;
+        }
+        a.download = filename;
         a.click();
         showToast('✅ Téléchargement démarré !', 'success');
       } else {
-        showToast('⚠️ Aucune image configurée. Contactez votre administration.', 'warning');
+        showToast('⚠️ Sélectionnez d’abord votre classe dans la section Aperçu.', 'warning');
       }
     });
   }

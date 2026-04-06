@@ -42,7 +42,7 @@
 <section class="hero" id="accueil">
   <div class="hero-content">
     <div class="hero-badge">
-      🎓 <span data-school-name>École Porteurs de Vie</span> — Cours en ligne
+      🎓 <span data-school-name>École Porteurs de Vie</span> — Vases d'Honneur
     </div>
 
     <div class="hero-logo-container">
@@ -715,27 +715,65 @@
       <p>Téléchargez l'image officielle de votre classe pour l'utiliser comme fond virtuel Zoom.</p>
     </div>
 
-    <div class="download-card">
-      <h3>🖼️ Fond Virtuel Officiel</h3>
-      <p>Image haute résolution — <span data-school-name>École Porteurs de Vie</span></p>
+    <!-- Grille des classes -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:0 auto;">
 
-      <!-- Placeholder si pas d'image configurée -->
-      <div class="download-placeholder" id="downloadPlaceholder">
-        <span style="font-size:40px;">🖼️</span>
-        <span>Image officielle à configurer par l'administration</span>
-      </div>
-
-      <!-- Image réelle (affichée quand configurée) -->
-      <img class="download-preview-img" id="downloadPreviewImg" src="" alt="Fond virtuel officiel" style="display:none;" />
-
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <button class="btn btn-primary" id="downloadBgBtn">
-          ⬇️ Télécharger l'image
-        </button>
-        <a href="#guide" class="btn btn-secondary">
-          📖 Comment l'utiliser ?
+      <!-- Classe 1 -->
+      <div class="download-card" style="padding:28px;">
+        <h3 style="font-size:18px;">Classe 1</h3>
+        <p style="font-size:13px;margin-bottom:16px;">Campus Afrique</p>
+        <img src="images/classe1.jpg" alt="Fond Classe 1" style="width:100%;border-radius:10px;margin-bottom:16px;border:3px solid rgba(255,255,255,0.3);" />
+        <a href="images/classe1.jpg" download="fond-zoom-classe1-campus-afrique.jpg" class="btn btn-primary" style="width:100%;justify-content:center;">
+          ⬇️ Télécharger
         </a>
       </div>
+
+      <!-- Classe 2 -->
+      <div class="download-card" style="padding:28px;">
+        <h3 style="font-size:18px;">Classe 2</h3>
+        <p style="font-size:13px;margin-bottom:16px;">Campus Afrique</p>
+        <img src="images/classe2.jpg" alt="Fond Classe 2" style="width:100%;border-radius:10px;margin-bottom:16px;border:3px solid rgba(255,255,255,0.3);" />
+        <a href="images/classe2.jpg" download="fond-zoom-classe2-campus-afrique.jpg" class="btn btn-primary" style="width:100%;justify-content:center;">
+          ⬇️ Télécharger
+        </a>
+      </div>
+
+      <!-- Classe 3 -->
+      <div class="download-card" style="padding:28px;">
+        <h3 style="font-size:18px;">Classe 3</h3>
+        <p style="font-size:13px;margin-bottom:16px;">Campus Afrique</p>
+        <img src="images/classe3.jpg" alt="Fond Classe 3" style="width:100%;border-radius:10px;margin-bottom:16px;border:3px solid rgba(255,255,255,0.3);" />
+        <a href="images/classe3.jpg" download="fond-zoom-classe3-campus-afrique.jpg" class="btn btn-primary" style="width:100%;justify-content:center;">
+          ⬇️ Télécharger
+        </a>
+      </div>
+
+      <!-- Classe 4 -->
+      <div class="download-card" style="padding:28px;">
+        <h3 style="font-size:18px;">Classe 4</h3>
+        <p style="font-size:13px;margin-bottom:16px;">Campus Afrique</p>
+        <img src="images/classe4.jpg" alt="Fond Classe 4" style="width:100%;border-radius:10px;margin-bottom:16px;border:3px solid rgba(255,255,255,0.3);" />
+        <a href="images/classe4.jpg" download="fond-zoom-classe4-campus-afrique.jpg" class="btn btn-primary" style="width:100%;justify-content:center;">
+          ⬇️ Télécharger
+        </a>
+      </div>
+
+      <!-- Stagiaire -->
+      <div class="download-card" style="padding:28px;">
+        <h3 style="font-size:18px;">Stagiaire</h3>
+        <p style="font-size:13px;margin-bottom:16px;">Campus Afrique</p>
+        <img src="images/classestagiaire.jpg" alt="Fond Stagiaire" style="width:100%;border-radius:10px;margin-bottom:16px;border:3px solid rgba(255,255,255,0.3);" />
+        <a href="images/classestagiaire.jpg" download="fond-zoom-stagiaire-campus-afrique.jpg" class="btn btn-primary" style="width:100%;justify-content:center;">
+          ⬇️ Télécharger
+        </a>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:32px;">
+      <a href="#guide" class="btn btn-outline">
+        📖 Comment utiliser cette image dans Zoom ?
+      </a>
     </div>
   </div>
 </section>
@@ -885,6 +923,7 @@
             <select id="classSelect">
               <option value="">-- Sélectionner votre classe --</option>
             </select>
+            <p style="font-size:12px;color:var(--text-light);margin-top:6px;">→ Sélectionnez votre classe pour voir l'aperçu et télécharger l'image</p>
           </div>
 
           <div class="info-box info">
@@ -912,8 +951,9 @@
       </div>
 
       <div class="custom-actions">
-        <a href="#telechargement" class="btn btn-primary">⬇️ Télécharger l'image officielle</a>
+        <button class="btn btn-primary" id="downloadBgBtn">⬇️ Télécharger mon image</button>
         <a href="#guide" class="btn btn-outline">📖 Voir le guide d'activation</a>
+        <a href="#telechargement" class="btn btn-outline">🖼️ Toutes les images</a>
       </div>
     </div>
   </div>
@@ -965,7 +1005,7 @@
      ============================================================ -->
 <footer>
   <div class="footer-logo" data-school-name>École Porteurs de Vie</div>
-  <p data-school-tagline>Cours en ligne via Zoom</p>
+  <p data-school-tagline>Vases d'Honneur — Campus Afrique</p>
 
   <div class="footer-links">
     <a href="#accueil">Accueil</a>
