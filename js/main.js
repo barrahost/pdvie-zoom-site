@@ -384,7 +384,7 @@ function showTestResult() {
     } else {
       status = 'supported';
       title = '✅ Appareil compatible !';
-      details = ['Votre ordinateur supporte les fonds virtuels Zoom.', 'Assurez-vous d\'avoir la dernière version de Zoom installée.'];
+      details = ['Votre ordinateur supporte les fonds virtuels Zoom selon les exigences officielles Zoom.', 'Assurez-vous d\'avoir la dernière version de Zoom installée.'];
       tips = ['Téléchargez Zoom depuis zoom.us/download', 'Activez le fond virtuel dans Paramètres > Arrière-plan et filtres'];
     }
   } else if (device === 'iphone') {
@@ -396,7 +396,7 @@ function showTestResult() {
     } else {
       status = 'supported';
       title = '✅ Appareil compatible !';
-      details = ['Votre iPhone supporte les fonds virtuels Zoom.', 'Assurez-vous d\'avoir iOS 14 minimum et Zoom version 5.6.6+.'];
+      details = ['Votre iPhone supporte les fonds virtuels Zoom.', 'Assurez-vous d\'avoir la dernière version de Zoom installée.'];
       tips = ['Allez dans Paramètres Zoom > Arrière-plan virtuel', 'Téléchargez l\'image officielle de votre classe'];
     }
   } else if (device === 'ipad') {
@@ -408,7 +408,7 @@ function showTestResult() {
     } else {
       status = 'supported';
       title = '✅ Tablette compatible !';
-      details = ['Votre iPad supporte les fonds virtuels Zoom.', 'Assurez-vous d\'avoir iPadOS 14 minimum et Zoom version 5.6.6+.'];
+      details = ['Votre iPad supporte les fonds virtuels Zoom.', 'Assurez-vous d\'avoir la dernière version de Zoom installée.'];
       tips = ['Activez le fond virtuel dans les paramètres Zoom', 'Téléchargez l\'image officielle de votre classe'];
     }
   } else if (device === 'android_phone' || device === 'android_tablet') {
@@ -423,30 +423,31 @@ function showTestResult() {
       details = ['Votre version d\'Android est trop ancienne (Android 7 ou inférieur).', 'Zoom requiert Android 8.0 minimum pour les fonds virtuels.'];
       tips = ['Mettez à jour Android si possible.', 'Rejoignez la réunion sans fond virtuel en attendant.'];
     } else if (isSamsungA) {
-      status = 'not-supported';
-      title = '❌ Appareil non compatible';
+      status = 'partial';
+      title = '⚠️ Vérification nécessaire';
       details = [
-        'Les Samsung Galaxy A, M et F ne sont pas compatibles avec les fonds virtuels Zoom.',
-        'Bien que Samsung soit listé par Zoom, cela ne concerne que les modèles haut de gamme.',
-        'La série Galaxy A utilise des GPU Mali-G68 ou Mali-G71, inférieurs au seuil Mali G72 requis par Zoom.',
-        'Cela a été confirmé sur Galaxy A10, A16, A54 et d’autres modèles de la gamme.'
+        'Samsung figure dans la liste officielle des fabricants supportés par Zoom.',
+        'Cependant, Zoom impose des exigences strictes de GPU (Mali G72 minimum ou Adreno 540+) et de processeur.',
+        'Certains appareils Samsung Galaxy A, M ou F peuvent ne pas répondre à ces exigences.',
+        'Zoom ne publie pas de liste spécifique des modèles compatibles ou incompatibles.'
       ];
       tips = [
-        'Rejoignez la réunion sans fond virtuel.',
+        'Essayez d\'activer le fond virtuel dans Zoom : si l\'option «\u00a0Arrière-plan virtuel\u00a0» n\'apparaît pas, votre appareil ne répond pas aux exigences.',
+        'Si la fonctionnalité n\'est pas disponible, rejoignez la réunion sans fond virtuel.',
         'Placez-vous devant un mur uni comme alternative visuelle.',
-        'Utilisez un ordinateur (Windows ou Mac) si possible.',
         'Contactez le support Porteurs de Vie pour une solution personnalisée.'
       ];
     } else if (isSamsungS) {
-      status = 'supported';
-      title = '✅ Appareil compatible !';
+      status = 'partial';
+      title = '⚠️ Potentiellement compatible';
       details = [
-        'Votre Samsung Galaxy S, Note ou Z est compatible avec les fonds virtuels Zoom.',
-        'Ces modèles disposent d\'un GPU Snapdragon 835+ ou Exynos 9810+ qui répond aux exigences Zoom.',
+        'Samsung figure dans la liste officielle des fabricants supportés par Zoom.',
+        'Zoom impose des exigences de GPU (Mali G72+ ou Adreno 540+) et de processeur (Exynos 9810+ ou Snapdragon 835+).',
         'Assurez-vous d\'avoir Android 8.0 minimum et la dernière version de Zoom.'
       ];
       tips = [
-        'Téléchargez l\'image officielle de votre classe depuis ce site.',
+        'Essayez d\'activer le fond virtuel dans Zoom pour confirmer la compatibilité.',
+        'Si l\'option apparaît : téléchargez l\'image officielle de votre classe depuis ce site.',
         'Dans Zoom, appuyez sur les 3 points (⋯) > Arrière-plan virtuel.',
         'Sélectionnez l\'image de votre classe.'
       ];
