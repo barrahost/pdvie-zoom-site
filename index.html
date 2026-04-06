@@ -6,7 +6,9 @@
   <meta name="description" content="Guide officiel pour activer le fond virtuel Zoom - École Porteurs de Vie" />
   <title>Fond Virtuel Zoom — École Porteurs de Vie</title>
   <link rel="stylesheet" href="css/style.css?v=3" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
 </head>
 <body>
 
@@ -43,11 +45,6 @@
   <div class="hero-content">
     <div class="hero-badge">
       <span data-school-name>École Porteurs de Vie</span> — Vases d'Honneur
-    </div>
-
-    <div class="hero-logo-container">
-      <div class="hero-logo-placeholder" id="heroLogoPlaceholder" style="display:none;">PV</div>
-      <img class="hero-logo" id="heroLogo" src="images/logo.png" alt="Logo Porteurs de Vie" />
     </div>
 
     <h1>GUIDE <span>FOND VIRTUEL</span><br>ZOOM</h1>
@@ -1008,21 +1005,29 @@
 
     <div class="support-cards">
 
-      <!-- WhatsApp (affiché si configuré) -->
-      <a class="support-card whatsapp" id="whatsappCard" href="#" style="display:none;">
-        <span class="support-card-icon">💬</span>
-        <h3>WhatsApp</h3>
-        <p>Contactez-nous directement sur WhatsApp pour une aide rapide.</p>
-        <span class="support-contact" id="whatsappLink">+XX XXX XXX XXX</span>
+      <!-- Téléphone -->
+      <a class="support-card" href="tel:+2250103489101">
+        <span class="support-card-icon">📞</span>
+        <h3>Téléphone</h3>
+        <p>Appelez-nous du lundi au vendredi pour une assistance immédiate.</p>
+        <span class="support-contact">(225) 01 03 48 91 01</span>
       </a>
 
       <!-- Email -->
-      <a class="support-card email" href="mailto:support@porteursdvie.fr" id="emailCard">
+      <a class="support-card email" href="mailto:info@porteursdevie.org" id="emailCard">
         <span class="support-card-icon">📧</span>
         <h3>Email</h3>
         <p>Envoyez-nous un email avec votre question et votre modèle d'appareil.</p>
-        <span class="support-contact" id="emailLink">support@porteursdvie.fr</span>
+        <span class="support-contact" id="emailLink">info@porteursdevie.org</span>
       </a>
+
+      <!-- Adresse -->
+      <div class="support-card">
+        <span class="support-card-icon">📍</span>
+        <h3>Adresse</h3>
+        <p>Campus Afrique — École Porteurs de Vie</p>
+        <span class="support-contact" style="font-size:13px;line-height:1.6;">92J5+C8F, L 125<br>Abidjan, Cocody Angré 7ème tranche</span>
+      </div>
 
     </div>
 
@@ -1061,109 +1066,20 @@
     <br><em style="color:var(--gold);font-size:12px;">— Proverbes 4:23</em>
   </p>
 
-  <p style="font-size:12px;opacity:0.5;">
+  <p style="font-size:13px;opacity:0.7;margin-bottom:6px;">
+    92J5+C8F, L 125, Abidjan, Cocody Angré 7ème tranche &nbsp;&bull;&nbsp;
+    <a href="tel:+2250103489101" style="color:var(--gold);text-decoration:none;">(225) 01 03 48 91 01</a> &nbsp;&bull;&nbsp;
+    <a href="mailto:info@porteursdevie.org" style="color:var(--gold);text-decoration:none;">info@porteursdevie.org</a>
+  </p>
+  <p style="font-size:12px;opacity:0.4;margin-top:12px;">
     Informations basées sur la documentation officielle Zoom (avril 2025)
   </p>
-  <p style="margin-top:8px;font-size:12px;opacity:0.5;">
+  <p style="margin-top:8px;font-size:12px;opacity:0.4;">
     &copy; <span id="currentYear"></span> <span data-school-name>École Porteurs de Vie</span> — Tous droits réservés
   </p>
 </footer>
 
 
-<!-- ============================================================
-     BOUTON ADMIN
-     ============================================================ -->
-<button class="admin-toggle" id="adminToggle" title="Panneau d'administration">
-  ⚙️ Admin
-</button>
-
-
-<!-- ============================================================
-     MODAL ADMIN
-     ============================================================ -->
-<div class="admin-modal" id="adminModal">
-  <div class="admin-modal-content">
-    <div class="admin-modal-header">
-      <h3>⚙️ Panneau d'administration</h3>
-      <button class="admin-modal-close" id="adminModalClose">✕</button>
-    </div>
-    <div class="admin-modal-body">
-
-      <!-- Informations de l'école -->
-      <div class="admin-section">
-        <div class="admin-section-title">🏫 Informations de l'école</div>
-
-        <div class="form-group">
-          <label>Nom de l'école</label>
-          <input type="text" id="adminSchoolName" placeholder="Ex : École Porteurs de Vie" />
-        </div>
-
-        <div class="form-group">
-          <label>Slogan / Tagline</label>
-          <input type="text" id="adminTagline" placeholder="Ex : Cours en ligne via Zoom" />
-        </div>
-      </div>
-
-      <!-- Logo -->
-      <div class="admin-section">
-        <div class="admin-section-title">🖼️ Logo de l'école</div>
-        <div class="upload-zone">
-          <input type="file" id="adminLogoUpload" accept="image/*" />
-          <span class="upload-icon">🏫</span>
-          <div class="upload-text">Cliquez pour uploader le logo (PNG, JPG)</div>
-          <img class="upload-preview" id="adminLogoPreview" alt="Aperçu logo" />
-        </div>
-      </div>
-
-      <!-- Image de fond -->
-      <div class="admin-section">
-        <div class="admin-section-title">🖼️ Image officielle du fond virtuel</div>
-        <div class="upload-zone">
-          <input type="file" id="adminBgUpload" accept="image/*" />
-          <span class="upload-icon">🎨</span>
-          <div class="upload-text">Cliquez pour uploader l'image de fond (PNG, JPG — 1920×1080 recommandé)</div>
-          <img class="upload-preview" id="adminBgPreview" alt="Aperçu fond" />
-        </div>
-      </div>
-
-      <!-- Classes et campus -->
-      <div class="admin-section">
-        <div class="admin-section-title">🎓 Classes et campus</div>
-        <div class="class-list" id="adminClassList">
-          <!-- Rempli dynamiquement -->
-        </div>
-        <button class="btn-add-class" id="addClassBtn">
-          + Ajouter une classe
-        </button>
-      </div>
-
-      <!-- Contact support -->
-      <div class="admin-section">
-        <div class="admin-section-title">📞 Contact support</div>
-
-        <div class="form-group">
-          <label>Numéro WhatsApp (avec indicatif pays, ex: +33612345678)</label>
-          <input type="text" id="adminWhatsApp" placeholder="+33612345678 (laisser vide pour désactiver)" />
-        </div>
-
-        <div class="form-group">
-          <label>Email de support</label>
-          <input type="email" id="adminEmail" placeholder="support@votreecole.fr" />
-        </div>
-      </div>
-
-      <!-- Bouton sauvegarder -->
-      <button class="btn btn-primary" id="adminSaveBtn" style="width:100%;justify-content:center;">
-        💾 Sauvegarder la configuration
-      </button>
-
-      <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:12px;">
-        La configuration est sauvegardée localement dans le navigateur.
-        Pour une mise en ligne permanente, modifiez le fichier <code>js/main.js</code>.
-      </p>
-    </div>
-  </div>
-</div>
 
 
 <!-- ============================================================

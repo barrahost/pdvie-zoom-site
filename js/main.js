@@ -14,8 +14,8 @@ const CONFIG = {
     logo: "images/logo.png",
     backgroundImage: null, // Sera défini dynamiquement selon la classe
     supportWhatsApp: null, // À configurer : ex. "+33612345678"
-    supportEmail: "support@porteursdvie.fr",
-    supportEmailLabel: "support@porteursdvie.fr"
+    supportEmail: "info@porteursdevie.org",
+    supportEmailLabel: "info@porteursdevie.org"
   },
   classes: [
     { name: "Classe 1 — Campus Afrique", campus: "Campus Afrique", image: "images/classe1.jpg" },
