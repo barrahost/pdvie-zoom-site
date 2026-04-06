@@ -387,6 +387,38 @@
     processTextInput(value);
   }
 
+  // ─── Détection de marque dans une saisie libre ─────────────────
+  const BRAND_KEYWORDS = [
+    { keys: ['samsung', 'galaxy', 'note 2', 'note 3', 'note 4', 'note 5', 'note 8', 'note 9', 'note 10', 'note 20'], brand: 'Samsung' },
+    { keys: ['xiaomi', 'mi ', 'mi1', 'mi2', 'mi3', 'mi4', 'mi5', 'mi6', 'mi7', 'mi8', 'mi9', 'mi10', 'mi11', 'mi12', 'mi13', 'mi14'], brand: 'Xiaomi' },
+    { keys: ['redmi', 'note 7', 'note 8', 'note 9', 'note 10', 'note 11', 'note 12', 'note 13', 'note 14', 'note 15'], brand: 'Redmi' },
+    { keys: ['poco', 'pocophone'], brand: 'POCO' },
+    { keys: ['iphone', 'apple iphone'], brand: 'iPhone' },
+    { keys: ['ipad', 'apple ipad'], brand: 'iPad' },
+    { keys: ['huawei', 'honor'], brand: 'Huawei' },
+    { keys: ['pixel', 'google pixel'], brand: 'Google Pixel' },
+    { keys: ['oneplus', 'one plus'], brand: 'OnePlus' },
+    { keys: ['oppo'], brand: 'Oppo' },
+    { keys: ['realme'], brand: 'Realme' },
+    { keys: ['vivo'], brand: 'Vivo' },
+    { keys: ['motorola', 'moto '], brand: 'Motorola' },
+    { keys: ['nokia'], brand: 'Nokia' },
+    { keys: ['sony', 'xperia'], brand: 'Sony' },
+    { keys: ['tecno'], brand: 'Tecno' },
+    { keys: ['infinix'], brand: 'Infinix' },
+    { keys: ['itel'], brand: 'Itel' },
+  ];
+
+  function detectBrandFromText(text) {
+    const lower = text.toLowerCase();
+    for (const entry of BRAND_KEYWORDS) {
+      for (const key of entry.keys) {
+        if (lower.includes(key)) return entry.brand;
+      }
+    }
+    return null;
+  }
+
   // ─── Flux de conversation ───────────────────────────────────────
   function startConversation() {
     state = { step: 'welcome', brand: null, model: null, year: null, result: null };
@@ -399,41 +431,104 @@
 
   function askBrand() {
     state.step = 'brand';
-    botReply('📱 Quelle est la <strong>marque</strong> de votre téléphone ou tablette ?', 500)
+    botReply('📱 Quelle est la <strong>marque</strong> de votre téléphone ou tablette ?<br><small style="color:#666;">Cliquez sur un bouton ou tapez directement (ex: "Samsung S20", "Redmi Note 15")</small>', 500)
       .then(() => {
         const topBrands = ['Samsung', 'Xiaomi / Redmi', 'iPhone', 'Huawei', 'Autre marque'];
-        setQuickButtons(topBrands.map(b => ({
-          label: b,
-          action: (val) => {
-            if (val === 'Autre marque') {
-              showTextInput('Ex: Motorola, Nokia, Sony, Tecno...');
+        // Afficher les boutons rapides ET le champ texte simultanément
+        const container = document.getElementById('ai-quick-btns');
+        const inputRow = document.getElementById('ai-text-input-row');
+        const input = document.getElementById('ai-text-input');
+        container.innerHTML = '';
+        topBrands.forEach(b => {
+          const btn = document.createElement('button');
+          btn.className = 'ai-quick-btn';
+          btn.textContent = b;
+          btn.addEventListener('click', () => {
+            addMessage(b, 'user');
+            container.innerHTML = '';
+            inputRow.hidden = true;
+            if (b === 'Autre marque') {
               state.step = 'brand_text';
+              showTextInput('Ex: Motorola, Nokia, Sony, Tecno...');
             } else {
-              state.brand = val.split(' / ')[0];
+              state.brand = b.split(' / ')[0];
               askModel();
             }
-          }
-        })));
+          });
+          container.appendChild(btn);
+        });
+        // Afficher aussi le champ texte libre
+        inputRow.hidden = false;
+        input.placeholder = 'Ou tapez directement : ex. Samsung S20...';
+        input.value = '';
+        setTimeout(() => input.focus(), 150);
       });
   }
 
   function processTextInput(value) {
-    if (state.step === 'brand_text') {
-      state.brand = value;
-      askModel();
+    const trimmed = value.trim();
+
+    // Étape : saisie de la marque (texte libre ou réponse combinée marque+modèle)
+    if (state.step === 'brand' || state.step === 'brand_text') {
+      const detectedBrand = detectBrandFromText(trimmed);
+      if (detectedBrand) {
+        state.brand = detectedBrand;
+        // Tenter d'extraire aussi le modèle de la même saisie
+        const modelPart = extractModelFromText(trimmed, detectedBrand);
+        if (modelPart) {
+          state.model = modelPart;
+          // Confirmer la détection automatique avant de passer à l'année
+          botReply(`✅ J'ai identifié : <strong>${detectedBrand} ${modelPart}</strong>. Parfait !`, 400)
+            .then(() => askYear());
+        } else {
+          askModel();
+        }
+      } else {
+        // Marque non reconnue automatiquement — on l'accepte telle quelle
+        state.brand = trimmed;
+        askModel();
+      }
+
+    // Étape : saisie du modèle
     } else if (state.step === 'model') {
-      state.model = value;
+      // Vérifier si l'étudiant a saisi marque+modèle d'un coup (ex: "Samsung S20")
+      const detectedBrand = detectBrandFromText(trimmed);
+      if (detectedBrand && !state.brand) {
+        state.brand = detectedBrand;
+      }
+      const modelPart = extractModelFromText(trimmed, state.brand || detectedBrand);
+      state.model = modelPart || trimmed;
       askYear();
+
+    // Étape : saisie de l'année
     } else if (state.step === 'year') {
-      const y = parseInt(value);
+      const y = parseInt(trimmed);
       if (y >= 2010 && y <= 2030) {
         state.year = y;
         runDiagnosis();
       } else {
         botReply('⚠️ Veuillez entrer une année valide (ex: 2022).', 300)
-          .then(() => showTextInput("Ex: 2022"));
+          .then(() => showTextInput('Ex: 2022'));
       }
     }
+  }
+
+  // Extrait la partie modèle d'une saisie en retirant la marque
+  function extractModelFromText(text, brand) {
+    if (!brand) return null;
+    const lower = text.toLowerCase();
+    const brandLower = brand.toLowerCase();
+    // Supprimer la marque du texte pour garder le modèle
+    let model = text.replace(new RegExp(brandLower, 'gi'), '').trim();
+    // Supprimer aussi les mots-clés de marque connus
+    const brandEntry = BRAND_KEYWORDS.find(e => e.brand === brand);
+    if (brandEntry) {
+      for (const key of brandEntry.keys) {
+        model = model.replace(new RegExp(key, 'gi'), '').trim();
+      }
+    }
+    model = model.replace(/^[,\s\-]+|[,\s\-]+$/g, '').trim();
+    return model.length > 0 ? model : null;
   }
 
   function askModel() {
