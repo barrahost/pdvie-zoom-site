@@ -329,8 +329,19 @@
           <div class="info-box warning">
             <span class="info-box-icon">⚠️</span>
             <div class="info-box-text">
-              <strong>Exigences GPU Android</strong>
-              Qualcomm Adreno 540+ (Snapdragon 835+) ou Mali G72+ sont requis. Les processeurs Exynos doivent être supérieurs à Exynos 9810.
+              <strong>Attention Samsung Galaxy A, M et F : la plupart sont incompatibles</strong>
+              Bien que Samsung soit un fabricant officiellement listé par Zoom, cela ne concerne que les modèles haut de gamme. Les séries Galaxy A (A10, A16, A54, etc.), Galaxy M et Galaxy F utilisent des GPU <strong>Mali-G68 ou Mali-G71</strong>, qui sont <strong>inférieurs au seuil requis (Mali G72 minimum)</strong>. Ces appareils <strong>ne supportent pas</strong> les fonds virtuels Zoom, même avec Android 8+ et 3 Go de RAM.
+            </div>
+          </div>
+
+          <div class="info-box info">
+            <span class="info-box-icon">ℹ️</span>
+            <div class="info-box-text">
+              <strong>Exigences GPU précises (source officielle Zoom)</strong>
+              <strong>Qualcomm Adreno :</strong> 540 (Snapdragon 835) ou supérieur, ou supérieur à 615 (QCS605/SDM710).<br>
+              <strong>Mali :</strong> série G version G72 ou supérieure.<br>
+              <strong>Exynos :</strong> doit être supérieur à Exynos 9810, Exynos 990, Kirin 980 ou Dimensity 1000.<br>
+              <strong>Samsung compatibles :</strong> Galaxy S8+ (Snapdragon 835), Galaxy S9, S10, S20, S21, S22, S23, S24, Note 8, Note 9, Note 10, Note 20, Z Fold, Z Flip.
             </div>
           </div>
 
@@ -338,7 +349,7 @@
             <span class="info-box-icon">ℹ️</span>
             <div class="info-box-text">
               <strong>Comment vérifier la compatibilité ?</strong>
-              Si l'option "Arrière-plan virtuel" n'apparaît pas dans les paramètres Zoom de votre réunion, votre appareil Android n'est pas compatible.
+              Si l'option "Arrière-plan virtuel" n'apparaît pas dans les paramètres Zoom de votre réunion, votre appareil Android n'est pas compatible. Vous pouvez aussi vérifier le modèle exact de votre GPU dans <em>Paramètres &rarr; À propos du téléphone &rarr; Informations sur le processeur</em>.
             </div>
           </div>
         </div>
@@ -823,7 +834,13 @@
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Samsung est l'un des fabricants officiellement supportés par Zoom pour les fonds virtuels. Cependant, votre appareil doit également respecter les exigences suivantes : Android 8.0 ou supérieur, processeur arm64 avec 8 cœurs ou plus, 3 Go de RAM minimum, et un GPU Qualcomm Adreno 540+ ou Mali G72+. Les anciens modèles Samsung avec des processeurs moins puissants peuvent ne pas être compatibles.
+          <strong>Attention : Samsung figure dans la liste officielle Zoom, mais cela ne signifie pas que tous les Samsung sont compatibles.</strong> La compatibilité dépend avant tout du GPU (processeur graphique) de l'appareil.
+
+          <br><br><strong>Samsung NON compatibles (GPU insuffisant) :</strong> Toute la gamme Galaxy A (A10, A12, A13, A14, A16, A22, A32, A33, A34, A52, A53, A54, A55...), Galaxy M et Galaxy F. Ces appareils utilisent des GPU Mali-G68 ou Mali-G71, inférieurs au seuil Mali G72 requis par Zoom.
+
+          <br><br><strong>Samsung compatibles :</strong> Galaxy S8+ (Snapdragon 835), S9, S10, S20, S21, S22, S23, S24, Note 8, Note 9, Note 10, Note 20, Z Fold, Z Flip — c'est-à-dire les modèles haut de gamme avec Snapdragon 835+ ou Exynos 9810+.
+
+          <br><br>Si vous avez un Galaxy A, M ou F, votre appareil ne supportera très probablement pas les fonds virtuels Zoom. Contactez notre support pour une solution alternative.
         </div>
       </div>
 

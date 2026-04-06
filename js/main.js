@@ -239,11 +239,15 @@ const modelOptions = {
   ],
   android_phone: [
     { value: 'android_old', label: 'Android 7 ou inférieur', icon: '❌' },
-    { value: 'android_8_plus', label: 'Android 8 ou supérieur', icon: '⚠️' }
+    { value: 'android_samsung_a', label: 'Samsung Galaxy A, M ou F (ex: A10, A16, A54...)', icon: '❌' },
+    { value: 'android_samsung_s', label: 'Samsung Galaxy S, Note, Z Fold/Flip', icon: '✅' },
+    { value: 'android_8_plus', label: 'Autre marque Android 8+ (Xiaomi, Huawei, Google, OnePlus, Oppo, Redmi, Vivo)', icon: '⚠️' }
   ],
   android_tablet: [
     { value: 'android_tablet_old', label: 'Android 7 ou inférieur', icon: '❌' },
-    { value: 'android_tablet_new', label: 'Android 8 ou supérieur', icon: '⚠️' }
+    { value: 'android_tablet_samsung_a', label: 'Samsung Galaxy Tab A ou Tab E', icon: '❌' },
+    { value: 'android_tablet_samsung_s', label: 'Samsung Galaxy Tab S (S6, S7, S8, S9...)', icon: '✅' },
+    { value: 'android_tablet_new', label: 'Autre tablette Android 8+ (Xiaomi, Huawei, Lenovo...)', icon: '⚠️' }
   ],
   windows: [
     { value: 'win_old', label: 'Windows 7 ou inférieur', icon: '❌' },
@@ -409,6 +413,8 @@ function showTestResult() {
     }
   } else if (device === 'android_phone' || device === 'android_tablet') {
     const isOldAndroid = model === 'android_old' || model === 'android_tablet_old';
+    const isSamsungA = model === 'android_samsung_a' || model === 'android_tablet_samsung_a';
+    const isSamsungS = model === 'android_samsung_s' || model === 'android_tablet_samsung_s';
     const hasLowRam = ram === 'less_3';
 
     if (isOldAndroid) {
@@ -416,6 +422,34 @@ function showTestResult() {
       title = '❌ Appareil non compatible';
       details = ['Votre version d\'Android est trop ancienne (Android 7 ou inférieur).', 'Zoom requiert Android 8.0 minimum pour les fonds virtuels.'];
       tips = ['Mettez à jour Android si possible.', 'Rejoignez la réunion sans fond virtuel en attendant.'];
+    } else if (isSamsungA) {
+      status = 'not-supported';
+      title = '❌ Appareil non compatible';
+      details = [
+        'Les Samsung Galaxy A, M et F ne sont pas compatibles avec les fonds virtuels Zoom.',
+        'Bien que Samsung soit listé par Zoom, cela ne concerne que les modèles haut de gamme.',
+        'La série Galaxy A utilise des GPU Mali-G68 ou Mali-G71, inférieurs au seuil Mali G72 requis par Zoom.',
+        'Cela a été confirmé sur Galaxy A10, A16, A54 et d’autres modèles de la gamme.'
+      ];
+      tips = [
+        'Rejoignez la réunion sans fond virtuel.',
+        'Placez-vous devant un mur uni comme alternative visuelle.',
+        'Utilisez un ordinateur (Windows ou Mac) si possible.',
+        'Contactez le support Porteurs de Vie pour une solution personnalisée.'
+      ];
+    } else if (isSamsungS) {
+      status = 'supported';
+      title = '✅ Appareil compatible !';
+      details = [
+        'Votre Samsung Galaxy S, Note ou Z est compatible avec les fonds virtuels Zoom.',
+        'Ces modèles disposent d\'un GPU Snapdragon 835+ ou Exynos 9810+ qui répond aux exigences Zoom.',
+        'Assurez-vous d\'avoir Android 8.0 minimum et la dernière version de Zoom.'
+      ];
+      tips = [
+        'Téléchargez l\'image officielle de votre classe depuis ce site.',
+        'Dans Zoom, appuyez sur les 3 points (⋯) > Arrière-plan virtuel.',
+        'Sélectionnez l\'image de votre classe.'
+      ];
     } else if (hasLowRam) {
       status = 'not-supported';
       title = '❌ RAM insuffisante';
@@ -424,12 +458,12 @@ function showTestResult() {
     } else if (ram === 'unknown') {
       status = 'partial';
       title = '⚠️ Vérification nécessaire';
-      details = ['Votre Android 8+ est potentiellement compatible.', 'La compatibilité dépend aussi du processeur (arm64, 8 cœurs+) et de la RAM (3 Go+).', 'Seuls certains fabricants sont supportés : Samsung, Xiaomi, Huawei, Google, OnePlus, Oppo, Redmi, Vivo.'];
+      details = ['Votre Android 8+ est potentiellement compatible.', 'La compatibilité dépend du processeur (arm64, 8 cœurs+), de la RAM (3 Go+) et du GPU (Mali G72+ ou Adreno 540+).', 'Fabricants supportés : Samsung Galaxy S/Note/Z, Xiaomi, Huawei, Google, OnePlus, Oppo, Redmi, Vivo.'];
       tips = ['Vérifiez votre RAM dans Paramètres > À propos du téléphone.', 'Essayez d\'activer le fond virtuel dans Zoom — si l\'option n\'apparaît pas, votre appareil n\'est pas compatible.'];
     } else {
       status = 'partial';
       title = '⚠️ Potentiellement compatible';
-      details = ['Votre Android 8+ avec 3 Go+ de RAM est potentiellement compatible.', 'La compatibilité dépend aussi du processeur (arm64, 8 cœurs+).', 'Seuls certains fabricants sont supportés : Samsung, Xiaomi, Huawei, Google, OnePlus, Oppo, Redmi, Vivo.'];
+      details = ['Votre Android 8+ avec 3 Go+ de RAM est potentiellement compatible.', 'La compatibilité dépend aussi du GPU (Mali G72+ ou Adreno 540+).', 'Fabricants supportés : Samsung Galaxy S/Note/Z, Xiaomi, Huawei, Google, OnePlus, Oppo, Redmi, Vivo.'];
       tips = ['Essayez d\'activer le fond virtuel dans Zoom.', 'Si l\'option n\'apparaît pas, votre appareil n\'est pas supporté.'];
     }
   }
