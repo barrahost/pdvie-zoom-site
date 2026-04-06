@@ -15,8 +15,8 @@
      ============================================================ -->
 <nav class="navbar">
   <a class="navbar-brand" href="#accueil">
-    <div class="navbar-logo-placeholder" id="navLogoPlaceholder">PV</div>
-    <img class="navbar-logo" id="navLogo" src="" alt="Logo" style="display:none;" data-logo />
+    <div class="navbar-logo-placeholder" id="navLogoPlaceholder" style="display:none;">PV</div>
+    <img class="navbar-logo" id="navLogo" src="images/logo.png" alt="Logo Porteurs de Vie" />
     <div>
       <div class="navbar-title" data-school-name>École Porteurs de Vie</div>
       <div class="navbar-subtitle">Guide Fond Virtuel Zoom</div>
@@ -26,12 +26,12 @@
   <button class="navbar-toggle" id="navbarToggle" aria-label="Menu">☰</button>
 
   <ul class="navbar-menu" id="navbarMenu">
-    <li><a href="#test">🧪 Test compatibilité</a></li>
-    <li><a href="#appareils">📱 Par appareil</a></li>
-    <li><a href="#guide">📖 Guide</a></li>
-    <li><a href="#telechargement">⬇️ Télécharger</a></li>
-    <li><a href="#faq">❓ FAQ</a></li>
-    <li><a href="#support">💬 Support</a></li>
+    <li><a href="#test">Test compatibilité</a></li>
+    <li><a href="#appareils">Par appareil</a></li>
+    <li><a href="#guide">Guide d'activation</a></li>
+    <li><a href="#telechargement">Télécharger</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#support" class="btn btn-primary btn-sm" style="margin-left:8px;">Support</a></li>
   </ul>
 </nav>
 
@@ -42,23 +42,28 @@
 <section class="hero" id="accueil">
   <div class="hero-content">
     <div class="hero-badge">
-      🎓 <span data-school-name>École Porteurs de Vie</span> — Vases d'Honneur
+      <span data-school-name>École Porteurs de Vie</span> — Vases d'Honneur
     </div>
 
     <div class="hero-logo-container">
-      <div class="hero-logo-placeholder" id="heroLogoPlaceholder">PV</div>
-      <img class="hero-logo" id="heroLogo" src="" alt="Logo" style="display:none;" data-logo />
+      <div class="hero-logo-placeholder" id="heroLogoPlaceholder" style="display:none;">PV</div>
+      <img class="hero-logo" id="heroLogo" src="images/logo.png" alt="Logo Porteurs de Vie" />
     </div>
 
-    <h1>Activez votre <span>fond virtuel Zoom</span></h1>
+    <h1>GUIDE <span>FOND VIRTUEL</span><br>ZOOM</h1>
+
+    <p class="hero-tagline">"Affichez l'image officielle de votre classe lors de vos cours en ligne"</p>
+
+    <div class="hero-divider">Campus Afrique &bull; Cours en ligne</div>
+
     <p>
-      Affichez l'image officielle de votre classe et de votre campus lors de vos cours en ligne.
-      Suivez notre guide étape par étape adapté à votre appareil.
+      Suivez notre guide étape par étape pour activer votre fond virtuel Zoom,
+      adapté à chaque type d'appareil.
     </p>
 
     <div class="hero-actions">
-      <a href="#test" class="btn btn-primary">🧪 Tester mon appareil</a>
-      <a href="#guide" class="btn btn-secondary">📖 Voir le guide</a>
+      <a href="#test" class="btn btn-primary">Tester mon appareil &rarr;</a>
+      <a href="#telechargement" class="btn btn-secondary">Télécharger mon image</a>
     </div>
   </div>
 
@@ -70,13 +75,37 @@
 
 
 <!-- ============================================================
+     BANDEAU VALEURS
+     ============================================================ -->
+<section style="background:var(--gold);padding:20px 24px;">
+  <div style="max-width:900px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;">
+    <div style="text-align:center;color:var(--text-dark);">
+      <div style="font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:2px;">Foi</div>
+      <div style="font-size:11px;font-weight:600;opacity:0.7;letter-spacing:1px;">FONDEMENT</div>
+    </div>
+    <div style="width:1px;height:40px;background:rgba(0,0,0,0.2);"></div>
+    <div style="text-align:center;color:var(--text-dark);">
+      <div style="font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:2px;">Amour</div>
+      <div style="font-size:11px;font-weight:600;opacity:0.7;letter-spacing:1px;">MOTEUR</div>
+    </div>
+    <div style="width:1px;height:40px;background:rgba(0,0,0,0.2);"></div>
+    <div style="text-align:center;color:var(--text-dark);">
+      <div style="font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:2px;">Discipolat</div>
+      <div style="font-size:11px;font-weight:600;opacity:0.7;letter-spacing:1px;">MISSION</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      TEST DE COMPATIBILITÉ
      ============================================================ -->
 <section class="section" id="test">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">🧪 Test rapide</span>
+      <span class="section-tag">Test rapide</span>
       <h2>Mon appareil est-il compatible ?</h2>
+      <div class="gold-line"></div>
       <p>Répondez à quelques questions pour savoir si votre téléphone, tablette ou ordinateur supporte les fonds virtuels Zoom.</p>
     </div>
 
@@ -107,8 +136,9 @@
 <section class="section section-alt" id="appareils">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">📱 Compatibilité</span>
+      <span class="section-tag">Compatibilité</span>
       <h2>Compatibilité par type d'appareil</h2>
+      <div class="gold-line"></div>
       <p>Consultez les exigences officielles de Zoom selon votre appareil.</p>
     </div>
 
@@ -459,17 +489,18 @@
 <section class="section" id="guide">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">📖 Guide</span>
+      <span class="section-tag">Guide d'activation</span>
       <h2>Guide pas à pas par appareil</h2>
+      <div class="gold-line"></div>
       <p>Suivez les instructions adaptées à votre appareil pour activer votre fond virtuel Zoom.</p>
     </div>
 
     <div class="guide-tabs">
-      <button class="guide-tab active" data-guide="iphone">📱 iPhone</button>
-      <button class="guide-tab" data-guide="ipad">📲 iPad</button>
-      <button class="guide-tab" data-guide="android">🤖 Android</button>
-      <button class="guide-tab" data-guide="windows">💻 Windows</button>
-      <button class="guide-tab" data-guide="mac">🖥️ Mac</button>
+      <button class="guide-tab active" data-guide="iphone">iPhone</button>
+      <button class="guide-tab" data-guide="ipad">iPad</button>
+      <button class="guide-tab" data-guide="android">Android</button>
+      <button class="guide-tab" data-guide="windows">Windows</button>
+      <button class="guide-tab" data-guide="mac">Mac</button>
     </div>
 
     <!-- Guide iPhone -->
@@ -710,8 +741,9 @@
 <section class="section section-alt" id="telechargement">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">⬇️ Téléchargement</span>
+      <span class="section-tag">Téléchargement</span>
       <h2>Image officielle du fond virtuel</h2>
+      <div class="gold-line"></div>
       <p>Téléchargez l'image officielle de votre classe pour l'utiliser comme fond virtuel Zoom.</p>
     </div>
 
@@ -785,8 +817,9 @@
 <section class="section" id="faq">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">❓ FAQ</span>
+      <span class="section-tag">FAQ</span>
       <h2>Questions fréquentes</h2>
+      <div class="gold-line"></div>
       <p>Retrouvez les réponses aux questions les plus courantes sur les fonds virtuels Zoom.</p>
     </div>
 
@@ -903,8 +936,9 @@
 <section class="section section-alt" id="personnalisation">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">🎨 Aperçu</span>
+      <span class="section-tag">Aperçu</span>
       <h2>Aperçu de votre fond virtuel</h2>
+      <div class="gold-line"></div>
       <p>Visualisez comment votre fond virtuel apparaîtra dans Zoom.</p>
     </div>
 
@@ -951,9 +985,9 @@
       </div>
 
       <div class="custom-actions">
-        <button class="btn btn-primary" id="downloadBgBtn">⬇️ Télécharger mon image</button>
-        <a href="#guide" class="btn btn-outline">📖 Voir le guide d'activation</a>
-        <a href="#telechargement" class="btn btn-outline">🖼️ Toutes les images</a>
+        <button class="btn btn-primary" id="downloadBgBtn">Télécharger mon image &rarr;</button>
+        <a href="#guide" class="btn btn-outline">Voir le guide d'activation</a>
+        <a href="#telechargement" class="btn btn-outline">Toutes les images</a>
       </div>
     </div>
   </div>
@@ -966,8 +1000,9 @@
 <section class="section" id="support">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">💬 Support</span>
+      <span class="section-tag">Support</span>
       <h2>Besoin d'aide ?</h2>
+      <div class="gold-line"></div>
       <p>Notre équipe est disponible pour vous aider à configurer votre fond virtuel Zoom.</p>
     </div>
 
@@ -1004,22 +1039,33 @@
      FOOTER
      ============================================================ -->
 <footer>
+  <img src="images/logo.png" alt="Porteurs de Vie" style="height:60px;object-fit:contain;margin-bottom:16px;" />
   <div class="footer-logo" data-school-name>École Porteurs de Vie</div>
-  <p data-school-tagline>Vases d'Honneur — Campus Afrique</p>
+  <p class="footer-tagline" data-school-tagline>Vases d'Honneur — Campus Afrique</p>
 
   <div class="footer-links">
     <a href="#accueil">Accueil</a>
     <a href="#test">Test compatibilité</a>
+    <a href="#appareils">Par appareil</a>
     <a href="#guide">Guide</a>
+    <a href="#telechargement">Télécharger</a>
     <a href="#faq">FAQ</a>
     <a href="#support">Support</a>
   </div>
 
   <hr class="footer-divider" />
 
-  <p>Informations basées sur la documentation officielle Zoom (mise à jour avril 2025)</p>
+  <p class="footer-verse">
+    "Garde ton cœur plus que toute autre chose,<br>
+    Car de lui viennent les sources de la vie."
+    <br><em style="color:var(--gold);font-size:12px;">— Proverbes 4:23</em>
+  </p>
+
+  <p style="font-size:12px;opacity:0.5;">
+    Informations basées sur la documentation officielle Zoom (avril 2025)
+  </p>
   <p style="margin-top:8px;font-size:12px;opacity:0.5;">
-    © <span id="currentYear"></span> <span data-school-name>École Porteurs de Vie</span> — Tous droits réservés
+    &copy; <span id="currentYear"></span> <span data-school-name>École Porteurs de Vie</span> — Tous droits réservés
   </p>
 </footer>
 
