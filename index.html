@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Guide officiel pour activer le fond virtuel Zoom - École Porteurs de Vie" />
+  <title>Fond Virtuel Zoom — École Porteurs de Vie</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="navbar">
+  <a class="navbar-brand" href="#accueil">
+    <div class="navbar-logo-placeholder" id="navLogoPlaceholder">PV</div>
+    <img class="navbar-logo" id="navLogo" src="" alt="Logo" style="display:none;" data-logo />
+    <div>
+      <div class="navbar-title" data-school-name>École Porteurs de Vie</div>
+      <div class="navbar-subtitle">Guide Fond Virtuel Zoom</div>
+    </div>
+  </a>
+
+  <button class="navbar-toggle" id="navbarToggle" aria-label="Menu">☰</button>
+
+  <ul class="navbar-menu" id="navbarMenu">
+    <li><a href="#test">🧪 Test compatibilité</a></li>
+    <li><a href="#appareils">📱 Par appareil</a></li>
+    <li><a href="#guide">📖 Guide</a></li>
+    <li><a href="#telechargement">⬇️ Télécharger</a></li>
+    <li><a href="#faq">❓ FAQ</a></li>
+    <li><a href="#support">💬 Support</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <div class="hero-badge">
+      🎓 <span data-school-name>École Porteurs de Vie</span> — Cours en ligne
+    </div>
+
+    <div class="hero-logo-container">
+      <div class="hero-logo-placeholder" id="heroLogoPlaceholder">PV</div>
+      <img class="hero-logo" id="heroLogo" src="" alt="Logo" style="display:none;" data-logo />
+    </div>
+
+    <h1>Activez votre <span>fond virtuel Zoom</span></h1>
+    <p>
+      Affichez l'image officielle de votre classe et de votre campus lors de vos cours en ligne.
+      Suivez notre guide étape par étape adapté à votre appareil.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#test" class="btn btn-primary">🧪 Tester mon appareil</a>
+      <a href="#guide" class="btn btn-secondary">📖 Voir le guide</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <span>↓</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TEST DE COMPATIBILITÉ
+     ============================================================ -->
+<section class="section" id="test">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🧪 Test rapide</span>
+      <h2>Mon appareil est-il compatible ?</h2>
+      <p>Répondez à quelques questions pour savoir si votre téléphone, tablette ou ordinateur supporte les fonds virtuels Zoom.</p>
+    </div>
+
+    <div class="test-card">
+      <!-- Intro -->
+      <div id="testIntro">
+        <span class="test-icon">🔍</span>
+        <h3>Test de compatibilité</h3>
+        <p>Ce test prend moins d'une minute et vous indiquera si votre appareil peut afficher un fond virtuel Zoom, et comment l'activer.</p>
+        <button class="btn btn-primary" id="startTestBtn">Démarrer le test →</button>
+      </div>
+
+      <!-- Questions -->
+      <div id="testQuestions" style="display:none;">
+        <div id="questionContainer"></div>
+      </div>
+
+      <!-- Résultat -->
+      <div id="testResult" style="display:none;"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION PAR APPAREIL
+     ============================================================ -->
+<section class="section section-alt" id="appareils">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">📱 Compatibilité</span>
+      <h2>Compatibilité par type d'appareil</h2>
+      <p>Consultez les exigences officielles de Zoom selon votre appareil.</p>
+    </div>
+
+    <div class="device-tabs">
+      <button class="device-tab active" data-tab="iphone">
+        <span class="tab-icon">📱</span> iPhone
+      </button>
+      <button class="device-tab" data-tab="ipad">
+        <span class="tab-icon">📲</span> iPad
+      </button>
+      <button class="device-tab" data-tab="android">
+        <span class="tab-icon">🤖</span> Android
+      </button>
+      <button class="device-tab" data-tab="windows">
+        <span class="tab-icon">💻</span> Windows
+      </button>
+      <button class="device-tab" data-tab="mac">
+        <span class="tab-icon">🖥️</span> Mac
+      </button>
+    </div>
+
+    <!-- iPhone -->
+    <div class="device-content active" id="device-iphone">
+      <div class="device-panel">
+        <div class="device-panel-header">
+          <span class="device-panel-icon">📱</span>
+          <div>
+            <h3>iPhone (iOS)</h3>
+            <p>Exigences officielles Zoom pour les appareils Apple iPhone</p>
+          </div>
+        </div>
+        <div class="device-panel-body">
+          <div class="compat-status partial">
+            ⚠️ Compatible selon le modèle — iPhone 8 ou plus récent requis
+          </div>
+
+          <div class="requirements-grid">
+            <div class="req-card">
+              <span class="req-card-icon">📱</span>
+              <h4>Modèle minimum</h4>
+              <p>iPhone 8, 8 Plus ou X</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">⚙️</span>
+              <h4>Système iOS</h4>
+              <p>iOS 14 ou supérieur</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">📲</span>
+              <h4>Application Zoom</h4>
+              <p>Version 5.6.6 ou supérieure</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🖼️</span>
+              <h4>Type de fond</h4>
+              <p>Image (avec ou sans écran vert)</p>
+            </div>
+          </div>
+
+          <div class="supported-devices">
+            <h4>Modèles compatibles ✅ vs non compatibles ❌</h4>
+            <div class="brand-chips">
+              <span class="brand-chip no">iPhone 6 ❌</span>
+              <span class="brand-chip no">iPhone 7 ❌</span>
+              <span class="brand-chip ok">iPhone 8 ✅</span>
+              <span class="brand-chip ok">iPhone X ✅</span>
+              <span class="brand-chip ok">iPhone XS ✅</span>
+              <span class="brand-chip ok">iPhone 11 ✅</span>
+              <span class="brand-chip ok">iPhone 12 ✅</span>
+              <span class="brand-chip ok">iPhone 13 ✅</span>
+              <span class="brand-chip ok">iPhone 14 ✅</span>
+              <span class="brand-chip ok">iPhone 15 ✅</span>
+              <span class="brand-chip ok">iPhone 16 ✅</span>
+            </div>
+          </div>
+
+          <div class="info-box warning">
+            <span class="info-box-icon">⚠️</span>
+            <div class="info-box-text">
+              <strong>iPhone 7 et antérieurs non supportés</strong>
+              Si vous avez un iPhone 7 ou plus ancien, la fonctionnalité de fond virtuel n'est pas disponible. Contactez le support pour des alternatives.
+            </div>
+          </div>
+
+          <div class="info-box tip">
+            <span class="info-box-icon">💡</span>
+            <div class="info-box-text">
+              <strong>Conseil</strong>
+              Pour vérifier votre modèle iPhone : Paramètres → Général → Informations → Modèle
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iPad -->
+    <div class="device-content" id="device-ipad">
+      <div class="device-panel">
+        <div class="device-panel-header">
+          <span class="device-panel-icon">📲</span>
+          <div>
+            <h3>iPad (iPadOS)</h3>
+            <p>Exigences officielles Zoom pour les tablettes Apple iPad</p>
+          </div>
+        </div>
+        <div class="device-panel-body">
+          <div class="compat-status partial">
+            ⚠️ Compatible selon le modèle — iPad Pro ou iPad 9.7" 5e génération minimum
+          </div>
+
+          <div class="requirements-grid">
+            <div class="req-card">
+              <span class="req-card-icon">📲</span>
+              <h4>Modèles compatibles</h4>
+              <p>iPad Pro (tous) ou iPad 9.7" 5e/6e gen+</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">⚙️</span>
+              <h4>Système iPadOS</h4>
+              <p>iPadOS 14 ou supérieur</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">📲</span>
+              <h4>Application Zoom</h4>
+              <p>Version 5.6.6 ou supérieure</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🖼️</span>
+              <h4>Type de fond</h4>
+              <p>Image (avec ou sans écran vert)</p>
+            </div>
+          </div>
+
+          <div class="supported-devices">
+            <h4>Modèles compatibles ✅ vs non compatibles ❌</h4>
+            <div class="brand-chips">
+              <span class="brand-chip no">iPad Air 1 ❌</span>
+              <span class="brand-chip no">iPad Mini 1-4 ❌</span>
+              <span class="brand-chip no">iPad 1-4 ❌</span>
+              <span class="brand-chip ok">iPad Pro (tous) ✅</span>
+              <span class="brand-chip ok">iPad 9.7" 5e gen ✅</span>
+              <span class="brand-chip ok">iPad 9.7" 6e gen ✅</span>
+              <span class="brand-chip ok">iPad Air 2+ ✅</span>
+              <span class="brand-chip ok">iPad Mini 5+ ✅</span>
+            </div>
+          </div>
+
+          <div class="info-box warning">
+            <span class="info-box-icon">⚠️</span>
+            <div class="info-box-text">
+              <strong>Anciens iPads non supportés</strong>
+              Les anciens modèles d'iPad (Air 1, Mini 1 à 4, iPad 1 à 4) ne supportent pas les fonds virtuels Zoom.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Android -->
+    <div class="device-content" id="device-android">
+      <div class="device-panel">
+        <div class="device-panel-header">
+          <span class="device-panel-icon">🤖</span>
+          <div>
+            <h3>Android (Téléphone & Tablette)</h3>
+            <p>Exigences officielles Zoom pour les appareils Android</p>
+          </div>
+        </div>
+        <div class="device-panel-body">
+          <div class="compat-status partial">
+            ⚠️ Compatible selon le modèle — Exigences strictes de processeur et de RAM
+          </div>
+
+          <div class="requirements-grid">
+            <div class="req-card">
+              <span class="req-card-icon">⚙️</span>
+              <h4>Android minimum</h4>
+              <p>Android 8.0 ou supérieur</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🔧</span>
+              <h4>Processeur</h4>
+              <p>arm64, 8 cœurs ou plus</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">💾</span>
+              <h4>RAM minimum</h4>
+              <p>3 Go ou plus</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">📲</span>
+              <h4>Application Zoom</h4>
+              <p>Version minimale globale</p>
+            </div>
+          </div>
+
+          <div class="supported-devices">
+            <h4>Fabricants supportés par Zoom (officiellement)</h4>
+            <div class="brand-chips">
+              <span class="brand-chip ok">Samsung ✅</span>
+              <span class="brand-chip ok">Xiaomi ✅</span>
+              <span class="brand-chip ok">Huawei ✅</span>
+              <span class="brand-chip ok">Google ✅</span>
+              <span class="brand-chip ok">OnePlus ✅</span>
+              <span class="brand-chip ok">Oppo ✅</span>
+              <span class="brand-chip ok">Redmi ✅</span>
+              <span class="brand-chip ok">Vivo ✅</span>
+              <span class="brand-chip no">Motorola ❌</span>
+              <span class="brand-chip no">Nokia ❌</span>
+              <span class="brand-chip no">LG ❌</span>
+              <span class="brand-chip no">Sony ❌</span>
+              <span class="brand-chip no">HTC ❌</span>
+            </div>
+          </div>
+
+          <div class="info-box warning">
+            <span class="info-box-icon">⚠️</span>
+            <div class="info-box-text">
+              <strong>Exigences GPU Android</strong>
+              Qualcomm Adreno 540+ (Snapdragon 835+) ou Mali G72+ sont requis. Les processeurs Exynos doivent être supérieurs à Exynos 9810.
+            </div>
+          </div>
+
+          <div class="info-box info">
+            <span class="info-box-icon">ℹ️</span>
+            <div class="info-box-text">
+              <strong>Comment vérifier la compatibilité ?</strong>
+              Si l'option "Arrière-plan virtuel" n'apparaît pas dans les paramètres Zoom de votre réunion, votre appareil Android n'est pas compatible.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Windows -->
+    <div class="device-content" id="device-windows">
+      <div class="device-panel">
+        <div class="device-panel-header">
+          <span class="device-panel-icon">💻</span>
+          <div>
+            <h3>Ordinateur Windows</h3>
+            <p>Exigences officielles Zoom pour les PC Windows</p>
+          </div>
+        </div>
+        <div class="device-panel-body">
+          <div class="compat-status ok">
+            ✅ Compatible — La plupart des PC Windows modernes supportent les fonds virtuels
+          </div>
+
+          <div class="requirements-grid">
+            <div class="req-card">
+              <span class="req-card-icon">🖥️</span>
+              <h4>Windows minimum</h4>
+              <p>Windows 10 (64-bit) recommandé</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🔧</span>
+              <h4>Processeur Intel</h4>
+              <p>i3-8000, i5-6000, i7-4000 ou supérieur</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🔧</span>
+              <h4>Processeur AMD</h4>
+              <p>8 cœurs logiques, 3.0 GHz ou plus</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">📲</span>
+              <h4>Application Zoom</h4>
+              <p>Version minimale globale ou supérieure</p>
+            </div>
+          </div>
+
+          <div class="info-box tip">
+            <span class="info-box-icon">💡</span>
+            <div class="info-box-text">
+              <strong>Avec écran vert physique</strong>
+              Si vous utilisez un écran vert physique, les exigences processeur sont moins strictes : tout processeur i5/i7 à 2 GHz ou plus est suffisant.
+            </div>
+          </div>
+
+          <div class="info-box info">
+            <span class="info-box-icon">ℹ️</span>
+            <div class="info-box-text">
+              <strong>Vérifier votre processeur</strong>
+              Clic droit sur "Ce PC" → Propriétés → Vous verrez le modèle de votre processeur.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mac -->
+    <div class="device-content" id="device-mac">
+      <div class="device-panel">
+        <div class="device-panel-header">
+          <span class="device-panel-icon">🖥️</span>
+          <div>
+            <h3>Mac (macOS)</h3>
+            <p>Exigences officielles Zoom pour les ordinateurs Apple Mac</p>
+          </div>
+        </div>
+        <div class="device-panel-body">
+          <div class="compat-status ok">
+            ✅ Compatible — Les Mac modernes supportent très bien les fonds virtuels Zoom
+          </div>
+
+          <div class="requirements-grid">
+            <div class="req-card">
+              <span class="req-card-icon">🖥️</span>
+              <h4>macOS minimum</h4>
+              <p>macOS 10.14 (Mojave) ou supérieur</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🔧</span>
+              <h4>Processeur</h4>
+              <p>Intel Core i5 ou Apple Silicon (M1/M2/M3)</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">📲</span>
+              <h4>Application Zoom</h4>
+              <p>Version minimale globale ou supérieure</p>
+            </div>
+            <div class="req-card">
+              <span class="req-card-icon">🖼️</span>
+              <h4>Type de fond</h4>
+              <p>Image et vidéo supportées</p>
+            </div>
+          </div>
+
+          <div class="info-box tip">
+            <span class="info-box-icon">💡</span>
+            <div class="info-box-text">
+              <strong>Apple Silicon (M1/M2/M3)</strong>
+              Les Mac équipés de puces Apple Silicon (M1, M2, M3) offrent d'excellentes performances pour les fonds virtuels Zoom.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GUIDE PAS À PAS
+     ============================================================ -->
+<section class="section" id="guide">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">📖 Guide</span>
+      <h2>Guide pas à pas par appareil</h2>
+      <p>Suivez les instructions adaptées à votre appareil pour activer votre fond virtuel Zoom.</p>
+    </div>
+
+    <div class="guide-tabs">
+      <button class="guide-tab active" data-guide="iphone">📱 iPhone</button>
+      <button class="guide-tab" data-guide="ipad">📲 iPad</button>
+      <button class="guide-tab" data-guide="android">🤖 Android</button>
+      <button class="guide-tab" data-guide="windows">💻 Windows</button>
+      <button class="guide-tab" data-guide="mac">🖥️ Mac</button>
+    </div>
+
+    <!-- Guide iPhone -->
+    <div class="guide-content active" id="guide-iphone">
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Téléchargez l'image officielle</h4>
+            <p>Rendez-vous dans la section <strong>"Télécharger l'image"</strong> de ce site et enregistrez l'image officielle de votre classe dans votre galerie photo.</p>
+            <div class="step-tip">💡 Appuyez longuement sur l'image pour l'enregistrer dans vos photos.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Ouvrez l'application Zoom</h4>
+            <p>Lancez l'application Zoom sur votre iPhone. Assurez-vous d'avoir la <strong>version 5.6.6 ou supérieure</strong> (vérifiez dans l'App Store).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Rejoignez ou démarrez une réunion</h4>
+            <p>Rejoignez votre cours en cliquant sur le lien Zoom fourni par votre enseignant.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Accédez aux paramètres vidéo</h4>
+            <p>Une fois dans la réunion, appuyez sur les <strong>trois points "..."</strong> en bas à droite de l'écran, puis sélectionnez <strong>"Arrière-plan virtuel"</strong>.</p>
+            <div class="step-tip">💡 Sur certaines versions : appuyez sur votre vignette vidéo → "Arrière-plan virtuel"</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Ajoutez l'image officielle</h4>
+            <p>Appuyez sur le bouton <strong>"+"</strong> pour ajouter une image, puis sélectionnez l'image officielle de votre classe que vous avez téléchargée.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h4>Activez le fond virtuel</h4>
+            <p>Appuyez sur l'image pour l'activer comme fond virtuel. Votre fond sera immédiatement visible par tous les participants.</p>
+            <div class="step-tip">✅ Le fond restera actif pour les prochaines réunions Zoom.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guide iPad -->
+    <div class="guide-content" id="guide-ipad">
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Téléchargez l'image officielle</h4>
+            <p>Rendez-vous dans la section <strong>"Télécharger l'image"</strong> et enregistrez l'image officielle dans vos photos iPad.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Mettez à jour Zoom</h4>
+            <p>Ouvrez l'App Store et vérifiez que Zoom est à jour (version <strong>5.6.6 minimum</strong>).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Rejoignez votre cours</h4>
+            <p>Ouvrez le lien Zoom de votre cours et rejoignez la réunion.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Ouvrez les paramètres vidéo</h4>
+            <p>Dans la réunion, appuyez sur <strong>"..."</strong> puis <strong>"Arrière-plan virtuel"</strong>. Sur iPad, cette option peut aussi se trouver dans le menu vidéo.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Importez et activez l'image</h4>
+            <p>Appuyez sur <strong>"+"</strong>, sélectionnez l'image officielle depuis votre galerie, puis appuyez dessus pour l'activer.</p>
+            <div class="step-tip">✅ Votre fond virtuel est maintenant actif !</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guide Android -->
+    <div class="guide-content" id="guide-android">
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Vérifiez la compatibilité</h4>
+            <p>Assurez-vous que votre appareil est compatible (Android 8+, 3 Go RAM+, processeur arm64). Utilisez le <a href="#test" style="color:var(--primary)">test de compatibilité</a> ci-dessus.</p>
+            <div class="step-warning">⚠️ Si l'option "Arrière-plan virtuel" n'apparaît pas dans Zoom, votre appareil n'est pas supporté.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Téléchargez l'image officielle</h4>
+            <p>Appuyez sur le bouton de téléchargement dans la section <strong>"Télécharger l'image"</strong> pour enregistrer l'image dans votre galerie.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Mettez à jour Zoom</h4>
+            <p>Ouvrez le Google Play Store et mettez à jour l'application Zoom vers la dernière version disponible.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Rejoignez votre cours</h4>
+            <p>Ouvrez le lien Zoom de votre cours et rejoignez la réunion.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Activez le fond virtuel</h4>
+            <p>Dans la réunion, appuyez sur les <strong>trois points "..."</strong> en bas de l'écran, puis sélectionnez <strong>"Arrière-plan virtuel"</strong>.</p>
+            <div class="step-tip">💡 L'option peut aussi être accessible via le bouton vidéo → flèche vers le haut.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h4>Importez et activez l'image</h4>
+            <p>Appuyez sur <strong>"+"</strong>, sélectionnez l'image officielle depuis votre galerie, puis appuyez dessus pour l'activer.</p>
+            <div class="step-tip">✅ Votre fond virtuel est maintenant actif !</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guide Windows -->
+    <div class="guide-content" id="guide-windows">
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Téléchargez l'image officielle</h4>
+            <p>Cliquez sur le bouton de téléchargement dans la section <strong>"Télécharger l'image"</strong> et enregistrez le fichier sur votre ordinateur.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Ouvrez Zoom et accédez aux Paramètres</h4>
+            <p>Lancez l'application Zoom. Cliquez sur votre <strong>photo de profil</strong> en haut à droite, puis sur <strong>"Paramètres"</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Allez dans "Arrière-plan et filtres"</h4>
+            <p>Dans le panneau de gauche des paramètres, cliquez sur <strong>"Arrière-plan et filtres"</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Ajoutez l'image officielle</h4>
+            <p>Cliquez sur le bouton <strong>"+"</strong> (Ajouter une image), puis sélectionnez l'image officielle de votre classe que vous avez téléchargée.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Activez le fond virtuel</h4>
+            <p>Cliquez sur l'image pour l'activer. Elle sera désormais utilisée comme fond virtuel dans toutes vos réunions Zoom.</p>
+            <div class="step-tip">✅ Le fond est sauvegardé et sera actif automatiquement lors de vos prochains cours.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guide Mac -->
+    <div class="guide-content" id="guide-mac">
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Téléchargez l'image officielle</h4>
+            <p>Cliquez sur le bouton de téléchargement et enregistrez l'image dans votre dossier <strong>Téléchargements</strong> ou <strong>Bureau</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Ouvrez les Paramètres Zoom</h4>
+            <p>Lancez Zoom. Cliquez sur <strong>zoom.us</strong> dans la barre de menu (en haut), puis sur <strong>"Préférences..."</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Accédez à "Arrière-plan et filtres"</h4>
+            <p>Dans la fenêtre des préférences, cliquez sur <strong>"Arrière-plan et filtres"</strong> dans le menu de gauche.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Importez l'image officielle</h4>
+            <p>Cliquez sur le <strong>"+"</strong> sous "Arrière-plans virtuels", puis sélectionnez <strong>"Ajouter une image"</strong> et choisissez l'image téléchargée.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Activez et fermez</h4>
+            <p>Cliquez sur l'image pour l'activer. Fermez les préférences. Votre fond virtuel sera actif lors de votre prochain cours.</p>
+            <div class="step-tip">✅ Sur Mac M1/M2/M3, le rendu est particulièrement fluide et précis.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TÉLÉCHARGEMENT
+     ============================================================ -->
+<section class="section section-alt" id="telechargement">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">⬇️ Téléchargement</span>
+      <h2>Image officielle du fond virtuel</h2>
+      <p>Téléchargez l'image officielle de votre classe pour l'utiliser comme fond virtuel Zoom.</p>
+    </div>
+
+    <div class="download-card">
+      <h3>🖼️ Fond Virtuel Officiel</h3>
+      <p>Image haute résolution — <span data-school-name>École Porteurs de Vie</span></p>
+
+      <!-- Placeholder si pas d'image configurée -->
+      <div class="download-placeholder" id="downloadPlaceholder">
+        <span style="font-size:40px;">🖼️</span>
+        <span>Image officielle à configurer par l'administration</span>
+      </div>
+
+      <!-- Image réelle (affichée quand configurée) -->
+      <img class="download-preview-img" id="downloadPreviewImg" src="" alt="Fond virtuel officiel" style="display:none;" />
+
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-primary" id="downloadBgBtn">
+          ⬇️ Télécharger l'image
+        </button>
+        <a href="#guide" class="btn btn-secondary">
+          📖 Comment l'utiliser ?
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">❓ FAQ</span>
+      <h2>Questions fréquentes</h2>
+      <p>Retrouvez les réponses aux questions les plus courantes sur les fonds virtuels Zoom.</p>
+    </div>
+
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Pourquoi l'option "Arrière-plan virtuel" n'apparaît-elle pas dans Zoom ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Si l'option n'apparaît pas, cela peut être dû à plusieurs raisons : votre appareil ne répond pas aux exigences minimales (processeur, RAM, version Android/iOS), votre version de Zoom est trop ancienne, ou l'administrateur de votre compte Zoom a désactivé cette fonctionnalité. Commencez par mettre à jour Zoom, puis utilisez notre test de compatibilité pour vérifier votre appareil.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Mon iPhone 7 peut-il utiliser un fond virtuel Zoom ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Non. Selon la documentation officielle de Zoom, les fonds virtuels sur iOS nécessitent au minimum un iPhone 8, iPhone 8 Plus ou iPhone X. L'iPhone 7 et les modèles antérieurs ne sont pas supportés en raison de limitations matérielles. Si vous avez un iPhone 7, nous vous recommandons de rejoindre vos cours sans fond virtuel ou d'utiliser un autre appareil.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Mon téléphone Android Samsung est-il compatible ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Samsung est l'un des fabricants officiellement supportés par Zoom pour les fonds virtuels. Cependant, votre appareil doit également respecter les exigences suivantes : Android 8.0 ou supérieur, processeur arm64 avec 8 cœurs ou plus, 3 Go de RAM minimum, et un GPU Qualcomm Adreno 540+ ou Mali G72+. Les anciens modèles Samsung avec des processeurs moins puissants peuvent ne pas être compatibles.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Quelle est la taille recommandée pour l'image de fond virtuel ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Zoom recommande une image avec un ratio 16:9 (format paysage). La résolution minimale est de 1280×720 pixels (HD), et la résolution recommandée est de 1920×1080 pixels (Full HD). Le format de fichier peut être JPG ou PNG. Une taille de fichier inférieure à 5 Mo est conseillée pour de meilleures performances.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Le fond virtuel fonctionne-t-il sans écran vert ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Oui, Zoom peut utiliser un fond virtuel sans écran vert grâce à l'intelligence artificielle qui détecte et supprime l'arrière-plan automatiquement. Cependant, cette fonctionnalité nécessite un appareil plus puissant. Pour un meilleur résultat, essayez de vous placer devant un fond uni et bien éclairé. Un écran vert physique améliore considérablement la qualité du rendu.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Comment activer le fond virtuel avant de rejoindre une réunion ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Sur ordinateur (Windows/Mac) : Ouvrez Zoom → Paramètres → Arrière-plan et filtres → Sélectionnez votre image. Le fond sera actif automatiquement lors de votre prochaine réunion. Sur mobile (iPhone/Android) : Le fond virtuel doit généralement être configuré depuis l'intérieur d'une réunion active. Certaines versions récentes de Zoom permettent de le configurer depuis les paramètres de l'application.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Mon fond virtuel est flou ou de mauvaise qualité, que faire ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Plusieurs facteurs peuvent affecter la qualité : 1) Assurez-vous d'utiliser une image HD (1920×1080 minimum). 2) Placez-vous devant un fond uni et bien éclairé. 3) Vérifiez que votre connexion internet est stable. 4) Fermez les autres applications pour libérer de la RAM. 5) Sur mobile, la qualité peut être réduite par rapport à un ordinateur en raison des limitations matérielles.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Puis-je utiliser le fond virtuel sur la version web de Zoom (navigateur) ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Non. La fonctionnalité de fond virtuel n'est pas disponible sur la version web de Zoom (via navigateur). Vous devez utiliser l'application Zoom installée sur votre appareil (Windows, Mac, iOS ou Android) pour accéder aux fonds virtuels.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Est-ce obligatoire d'utiliser le fond virtuel officiel ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Oui, l'école Porteurs de Vie demande à tous les étudiants d'utiliser l'image officielle de leur classe et campus comme fond virtuel lors des cours en ligne. Cela permet de créer une identité visuelle cohérente et professionnelle pour toute la communauté étudiante. Si votre appareil n'est pas compatible, veuillez contacter le support pour trouver une solution alternative.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Mon appareil n'est pas compatible, que puis-je faire ?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Si votre appareil ne supporte pas les fonds virtuels Zoom, voici quelques alternatives : 1) Utilisez un ordinateur (Windows ou Mac) si possible. 2) Placez-vous devant un fond physique uni (mur blanc, tissu) pour un rendu propre. 3) Contactez notre support via WhatsApp ou email pour obtenir une dérogation ou des conseils personnalisés. 4) Envisagez d'utiliser un écran vert physique qui réduit les exigences matérielles.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PERSONNALISATION (ZONE ADMIN VISIBLE)
+     ============================================================ -->
+<section class="section section-alt" id="personnalisation">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">🎨 Aperçu</span>
+      <h2>Aperçu de votre fond virtuel</h2>
+      <p>Visualisez comment votre fond virtuel apparaîtra dans Zoom.</p>
+    </div>
+
+    <div class="custom-panel">
+      <div class="custom-grid">
+        <div>
+          <div class="custom-section-title">Vos informations</div>
+
+          <div class="form-group">
+            <label for="previewStudentName">Votre prénom et nom</label>
+            <input type="text" id="previewStudentName" placeholder="Ex : Marie Dupont" />
+          </div>
+
+          <div class="form-group">
+            <label for="classSelect">Votre classe</label>
+            <select id="classSelect">
+              <option value="">-- Sélectionner votre classe --</option>
+            </select>
+          </div>
+
+          <div class="info-box info">
+            <span class="info-box-icon">ℹ️</span>
+            <div class="info-box-text">
+              L'image officielle de votre classe vous a été communiquée par votre administration. Téléchargez-la dans la section ci-dessus.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="preview-panel">
+            <h4>Aperçu Zoom</h4>
+            <div class="zoom-preview">
+              <div class="zoom-preview-bg" id="zoomPreviewBg" data-bg-preview></div>
+              <div class="zoom-preview-avatar">👤</div>
+              <div class="zoom-preview-overlay">
+                <div class="zoom-preview-name" id="zoomPreviewName">Votre Nom</div>
+                <div class="zoom-preview-class" id="zoomPreviewClassLabel">Votre Classe</div>
+              </div>
+            </div>
+            <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:10px;">Aperçu simulé — le rendu réel peut varier</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-actions">
+        <a href="#telechargement" class="btn btn-primary">⬇️ Télécharger l'image officielle</a>
+        <a href="#guide" class="btn btn-outline">📖 Voir le guide d'activation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SUPPORT
+     ============================================================ -->
+<section class="section" id="support">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">💬 Support</span>
+      <h2>Besoin d'aide ?</h2>
+      <p>Notre équipe est disponible pour vous aider à configurer votre fond virtuel Zoom.</p>
+    </div>
+
+    <div class="support-cards">
+
+      <!-- WhatsApp (affiché si configuré) -->
+      <a class="support-card whatsapp" id="whatsappCard" href="#" style="display:none;">
+        <span class="support-card-icon">💬</span>
+        <h3>WhatsApp</h3>
+        <p>Contactez-nous directement sur WhatsApp pour une aide rapide.</p>
+        <span class="support-contact" id="whatsappLink">+XX XXX XXX XXX</span>
+      </a>
+
+      <!-- Email -->
+      <a class="support-card email" href="mailto:support@porteursdvie.fr" id="emailCard">
+        <span class="support-card-icon">📧</span>
+        <h3>Email</h3>
+        <p>Envoyez-nous un email avec votre question et votre modèle d'appareil.</p>
+        <span class="support-contact" id="emailLink">support@porteursdvie.fr</span>
+      </a>
+
+    </div>
+
+    <div style="text-align:center;margin-top:32px;">
+      <p style="color:var(--text-medium);font-size:14px;">
+        Lors de votre prise de contact, merci d'indiquer : votre nom, votre classe, votre modèle d'appareil et une description du problème rencontré.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-logo" data-school-name>École Porteurs de Vie</div>
+  <p data-school-tagline>Cours en ligne via Zoom</p>
+
+  <div class="footer-links">
+    <a href="#accueil">Accueil</a>
+    <a href="#test">Test compatibilité</a>
+    <a href="#guide">Guide</a>
+    <a href="#faq">FAQ</a>
+    <a href="#support">Support</a>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <p>Informations basées sur la documentation officielle Zoom (mise à jour avril 2025)</p>
+  <p style="margin-top:8px;font-size:12px;opacity:0.5;">
+    © <span id="currentYear"></span> <span data-school-name>École Porteurs de Vie</span> — Tous droits réservés
+  </p>
+</footer>
+
+
+<!-- ============================================================
+     BOUTON ADMIN
+     ============================================================ -->
+<button class="admin-toggle" id="adminToggle" title="Panneau d'administration">
+  ⚙️ Admin
+</button>
+
+
+<!-- ============================================================
+     MODAL ADMIN
+     ============================================================ -->
+<div class="admin-modal" id="adminModal">
+  <div class="admin-modal-content">
+    <div class="admin-modal-header">
+      <h3>⚙️ Panneau d'administration</h3>
+      <button class="admin-modal-close" id="adminModalClose">✕</button>
+    </div>
+    <div class="admin-modal-body">
+
+      <!-- Informations de l'école -->
+      <div class="admin-section">
+        <div class="admin-section-title">🏫 Informations de l'école</div>
+
+        <div class="form-group">
+          <label>Nom de l'école</label>
+          <input type="text" id="adminSchoolName" placeholder="Ex : École Porteurs de Vie" />
+        </div>
+
+        <div class="form-group">
+          <label>Slogan / Tagline</label>
+          <input type="text" id="adminTagline" placeholder="Ex : Cours en ligne via Zoom" />
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="admin-section">
+        <div class="admin-section-title">🖼️ Logo de l'école</div>
+        <div class="upload-zone">
+          <input type="file" id="adminLogoUpload" accept="image/*" />
+          <span class="upload-icon">🏫</span>
+          <div class="upload-text">Cliquez pour uploader le logo (PNG, JPG)</div>
+          <img class="upload-preview" id="adminLogoPreview" alt="Aperçu logo" />
+        </div>
+      </div>
+
+      <!-- Image de fond -->
+      <div class="admin-section">
+        <div class="admin-section-title">🖼️ Image officielle du fond virtuel</div>
+        <div class="upload-zone">
+          <input type="file" id="adminBgUpload" accept="image/*" />
+          <span class="upload-icon">🎨</span>
+          <div class="upload-text">Cliquez pour uploader l'image de fond (PNG, JPG — 1920×1080 recommandé)</div>
+          <img class="upload-preview" id="adminBgPreview" alt="Aperçu fond" />
+        </div>
+      </div>
+
+      <!-- Classes et campus -->
+      <div class="admin-section">
+        <div class="admin-section-title">🎓 Classes et campus</div>
+        <div class="class-list" id="adminClassList">
+          <!-- Rempli dynamiquement -->
+        </div>
+        <button class="btn-add-class" id="addClassBtn">
+          + Ajouter une classe
+        </button>
+      </div>
+
+      <!-- Contact support -->
+      <div class="admin-section">
+        <div class="admin-section-title">📞 Contact support</div>
+
+        <div class="form-group">
+          <label>Numéro WhatsApp (avec indicatif pays, ex: +33612345678)</label>
+          <input type="text" id="adminWhatsApp" placeholder="+33612345678 (laisser vide pour désactiver)" />
+        </div>
+
+        <div class="form-group">
+          <label>Email de support</label>
+          <input type="email" id="adminEmail" placeholder="support@votreecole.fr" />
+        </div>
+      </div>
+
+      <!-- Bouton sauvegarder -->
+      <button class="btn btn-primary" id="adminSaveBtn" style="width:100%;justify-content:center;">
+        💾 Sauvegarder la configuration
+      </button>
+
+      <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:12px;">
+        La configuration est sauvegardée localement dans le navigateur.
+        Pour une mise en ligne permanente, modifiez le fichier <code>js/main.js</code>.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="js/main.js"></script>
+<script>
+  // Année courante dans le footer
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
